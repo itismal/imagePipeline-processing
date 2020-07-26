@@ -1,0 +1,16 @@
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\IPP.exe
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.csprojAssemblyReference.cache
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.AssemblyInfoInputs.cache
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.AssemblyInfo.cs
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.csproj.CoreCompileInputs.cache
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\IPP.deps.json
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\IPP.runtimeconfig.json
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\IPP.runtimeconfig.dev.json
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\IPP.dll
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\IPP.pdb
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\SixLabors.Core.dll
+C:\Users\Malav\Desktop\IPP\IPP\bin\Debug\netcoreapp3.1\SixLabors.ImageSharp.dll
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.csproj.CopyComplete
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.dll
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.pdb
+C:\Users\Malav\Desktop\IPP\IPP\obj\Debug\netcoreapp3.1\IPP.genruntimeconfig.cache
