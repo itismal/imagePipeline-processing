@@ -1,15 +1,20 @@
-﻿using System;
-using SixLabors.ImageSharp;
+﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.PixelFormats;
 
-namespace ImgProps
+namespace ImageProps
 {
     public class ImgProps
     {
         private Image<Rgba32> _data;
         public int Width { get { return _data.Width; } }
         public int Height { get { return _data.Height; } }
+
+        public Rgba32 this[int x, int y]
+        {
+            get { return _data[x, y]; }
+            set { _data[x, y] = value; }
+        }
 
         public override string ToString()
         {
@@ -26,7 +31,15 @@ namespace ImgProps
         {
             ResizeOptions options = new ResizeOptions();
             options.Sampler = KnownResamplers.NearestNeighbor;
-            options.Size = new SixLabors.Primitives.Size();
+            options.Size = new SixLabors.Primitives.Size(newWidth, newHeight);
+            ImgProps newImg = new ImgProps(img);
+            newImg._data.Mutate(x => x.Resize(options));
+            return newImg;
+        }
+
+        public static ImgProps ToGrayscale(ImgProps img)
+        {
+            return new ImgProps(img._data.CloneAs<Gray8>().CloneAs<Rgba32>());
         }
 
         //Save image
@@ -50,6 +63,11 @@ namespace ImgProps
         public ImgProps(ImgProps img)
         {
             _data = img._data.Clone();
+        }
+
+        public ImgProps(int width, int height)
+        {
+            _data = new Image<Rgba32>(Configuration.Default, width, height, Rgba32.Black);
         }
     }
 }
