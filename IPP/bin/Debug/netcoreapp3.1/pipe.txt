@@ -1,0 +1,28 @@
+## This is Malav's PipeFile ##
+
+#Lines beginning with '#' are comments
+#Feel Free to make your own comments using '#' in the beginning.
+#Comments can be made in any line except node input lines.
+#Feel free to leave empty lines if you like (see second line).
+
+## Node usage from pipe file ##
+## 	ATTENTION	##
+#There are three nodes in total: Noise, Vignette and Convolve.
+#They are reusable nodes.
+
+#Noise has 'noisePercent' as its parameter which describes amount 
+#of noise to be inserted. Parameter range: 0 <= parameter <=1
+#Convolve has 'kernel' as its parameter. 
+#'kernel' can take any one of these parameters: blur, edge or sharpen.
+#Vignette has no parameters.
+
+## FOR EXAMPLE ##
+#node=vignette
+#node=convolve kernel=sharpen
+#node=convolve kernel=edge
+#node=convolve kernel=blur
+#node=noise noisePercent=0.15
+##Note: no spaces between '='.
+
+node=greyscale
+node=noise noisePercent=0.3

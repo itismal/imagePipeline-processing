@@ -6,14 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="BaseNode.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="BaseNode.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0007" />
   </ItemGroup>
 

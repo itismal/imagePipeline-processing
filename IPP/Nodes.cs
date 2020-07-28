@@ -5,44 +5,6 @@ using NodeAbstraction;
 
 namespace Nodes
 {
-    public class N_Greyscale : BaseNode
-    {
-        public override string NodeName
-        {
-            get { return string.Format("GreyScale"); }
-        }
-
-        public override ImgProps Process(ImgProps input)
-        {
-            ImgProps output = ImgProps.ToGrayscale(input);
-            return output;
-        }
-    }
-
-    public class N_Pixelate : BaseNode
-    {
-        public override string NodeName
-        {
-            get { return string.Format("Pixelate"); }
-        }
-
-        private int _width;
-        private int _height;
-
-        public N_Pixelate(int newWidth, int newHeight)
-        {
-            _width = newWidth;
-            _height = newHeight;
-        }
-
-        public override ImgProps Process(ImgProps input)
-        {
-            ImgProps output = ImgProps.Resize(input, _width, _height);
-            output = ImgProps.Resize(output, input.Width, input.Height);
-            return output;
-        }
-    }
-
     public class N_Noise : BaseNode
     {
         private float _decimalPercent;

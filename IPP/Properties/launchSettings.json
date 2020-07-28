@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IPP": {
+      "commandName": "Project",
+      "commandLineArgs": "-pipe pipe.txt -input in/cat.png -verbose -output out -saveall"
+    }
+  }
+}
