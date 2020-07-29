@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace IPP
+namespace ArgumentProcessing
 {
     public class ArgsProcessing
     {
@@ -162,7 +162,6 @@ namespace IPP
         public ArgsProcessing(string[] args)
         {
             _args = args;
-
             InitialCheck();
         }
     }
