@@ -61,15 +61,6 @@ namespace NodeAbstraction
                 Console.WriteLine("Size of output image: " + output.ToString() + "\n");
             }
 
-            //if (isDirectory == false)
-            //{
-            //    if (prevNode == null)
-            //    {
-            //        //Reset counter if all node/s are processed
-            //        imgNum = 0;
-            //    }
-            //}
-
             return output;
         }
     }

@@ -1,36 +1,34 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace ArgumentProcessing
 {
     public class ArgsProcessing
     {
         private static string[] _args;
-        private static int mandatoryArgsStat;
+        private static bool mandatoryArgsStat;
 
-        private static void InitialCheck()
+        public static bool InitialCheck()
         {
-            if (_args.Length == 0)
-            {
-                Console.WriteLine("No arguments entered. Use -help.");
-                return;
-            }
-            else if (_args.Contains("-help") && _args.Length > 1)
+            if (_args.Contains("-help") && _args.Length > 1)
             {
                 Console.WriteLine("Use only -help to view help information");
-                return;
+                return false;
             }
             else if (_args[0] == "-help")
             {
                 HelpArgs();
-                return;
+                return false;
             }
             else
             {
                 mandatoryArgsStat = CheckMandatoryArgument();
-                if (mandatoryArgsStat == 1)
-                    return;
+                if (mandatoryArgsStat == false)
+                    return false;
             }
+
+            return false;
         }
 
         private static void HelpArgs()
@@ -39,33 +37,38 @@ namespace ArgumentProcessing
             Required parameters:
                 -pipe <path> : the path to the pipe txt file
                 -input <path> : the path to the input image or image directory
+                -output <path> : the path to the output(file or directory)
+                (must be a directory if -saveall is enabled or - input is a directory)
                                              
             Options:
                 -verbose : use this option to enable verbose logging
                 -saveall : use this option to save all intermediate images
-                -help : display this help
-                - output <path> : the path to the output(file or directory)
-                (must be a directory if -saveall is enabled or - input is a directory)";
+                -help : display this help";
 
             Console.WriteLine(executionInfo);
         }
 
-        private static int CheckMandatoryArgument()
+        private static bool CheckMandatoryArgument()
         {
             if (!_args.Contains("-pipe"))
             {
                 Console.WriteLine("'-pipe' argument not found.\nRecommendation: Use '-help'.");
-                return 1;
+                return false;
             }
             else if (!_args.Contains("-input"))
             {
                 Console.WriteLine("'-input' argument not found.\nRecommendation: Use '-help'.");
-                return 1;
+                return false;
+            }
+            else if (!_args.Contains("-output"))
+            {
+                Console.WriteLine("'-output' argument not found.\nRecommendation: Use '-help'.");
+                return false;
             }
             else
             {
                 Console.WriteLine("Mandatory arguments present.\n");
-                return 0;
+                return true;
             }
         }
 
@@ -162,7 +165,6 @@ namespace ArgumentProcessing
         public ArgsProcessing(string[] args)
         {
             _args = args;
-            InitialCheck();
         }
     }
 }
