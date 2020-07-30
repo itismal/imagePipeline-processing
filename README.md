@@ -1,4 +1,4 @@
-# Image Pipline Processing
+# Image Pipline Processing (IPP)
 
 ## Overview
 
@@ -84,7 +84,17 @@ Following arguments are used for implementation:
 * Image input size
 * Image output size
 
-**-saveall:** saves all intermediate node if applicable  
+**-saveall:** saves all intermediate node if applicable
+
+**Usage (regardless of the order of arguments):**
+>IPP.exe -input \<> -pipe \<> -output \<> -saveall -verbose
+
+## Progress
+
+[x] Implementation as in first version  
+[ ] Allowing user to enter/choosing pipe data without pipefile  
+[ ] Detailed README.md with examples  
+[ ] New image processing methods
 
 ## Contribution Statement
 

@@ -1,28 +1,47 @@
-## This is Malav's PipeFile ##
+## Welcome to Image Pipeline Processing (IPP) PipeFile ##
 
-#Lines beginning with '#' are comments
-#Feel Free to make your own comments using '#' in the beginning.
-#Comments can be made in any line except node input lines.
-#Feel free to leave empty lines if you like (see second line).
+# Lines beginning with '#' are comments
+
+# Feel Free to make your own comments using '#'.
+# Comments can be made in any line EXCEPT node input lines.
+# Feel free to leave empty lines if you like (see second line).
+#Space after # in comment lines does not affect pipe data processing. Just like this line itselft.
+
+# NODE & COMMENT LINES SHOULD BE SEPARATE.
+# '#' as first character in new line is an identifier of comments.
+# EMPTY lines will be omitted in processing automatically.
 
 ## Node usage from pipe file ##
 ## 	ATTENTION	##
-#There are three nodes in total: Noise, Vignette and Convolve.
-#They are reusable nodes.
+# There are three nodes in total: Noise, Vignette and Convolve.
+# They are reusable nodes. Use them in any order and repeat it as much as you like!
 
 #Noise has 'noisePercent' as its parameter which describes amount 
-#of noise to be inserted. Parameter range: 0 <= parameter <=1
+#of noise to be inserted. Parameter range: 0 <= parameter <=1 (decimals included)
+
 #Convolve has 'kernel' as its parameter. 
-#'kernel' can take any one of these parameters: blur, edge or sharpen.
+#'kernel' can take ONLY one of these parameters: blur, edge or sharpen.
+
 #Vignette has no parameters.
 
-## FOR EXAMPLE ##
-#node=vignette
-#node=convolve kernel=sharpen
-#node=convolve kernel=edge
-#node=convolve kernel=blur
-#node=noise noisePercent=0.15
-##Note: no spaces between '='.
+## FOR EXAMPLE (copy paste them without hash in new line and enjoy!) ##
+# node=vignette
 
-node=convolve kernel=blur
-node=noise noisePercent=0.3
+# node=convolve kernel=sharpen
+# node=convolve kernel=edge
+# node=convolve kernel=blur
+
+# node=noise noisePercent=0.15/0.02/0.50/etc
+
+## NOTE: NO SPACES BETWEEN '='
+
+# Following is an example on how to edge in one of best way possible
+# in scope of this program.
+
+node=vignette
+node=convolve kernel=sharpen
+node=convolve kernel=edge
+
+
+
+
